@@ -7,4 +7,16 @@ class ApplicationController < ActionController::Base
         @current_user = nil
       end
     end
+
+    def signed_in?
+      !current_user.nil?
+    end
+
+    def sign_in(user)
+      session[:user_id]=user.id
+    end
+
+    def sign_out
+      sessions[:user_id]=nil
+    end
   end

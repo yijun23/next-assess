@@ -76,3 +76,6 @@ gem 'bootstrap', '~> 4.1.1'
 # Pagination
 gem 'will_paginate'
 gem 'bootstrap-will_paginate', '0.0.10'
+
+# Search function
+gem 'ransack', github: 'activerecord-hackery/ransack'

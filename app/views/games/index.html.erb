@@ -2,6 +2,11 @@
 
 <h1>Games</h1>
 
+<div class="pull-right" style="margin-right: 10px">
+<%= search_form_for @q, html: {class:"form-inline"} do |f|%>
+  <%= f.search_field :game_name_cont, placeholder:"Search", class:"form-control" %>
+<% end %>
+
 <table>
   <thead>
     <tr>
@@ -33,5 +38,4 @@
 <%= link_to 'New Game', new_game_path %>
 
 <div align="center">
-<%= will_paginate %>
 </div>

@@ -1,4 +1,4 @@
-<%= form_with(model: game, local: true) do |form| %>
+<%= form_with(model: game, remote: true) do |form| %>
   <% if game.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(game.errors.count, "error") %> prohibited this game from being saved:</h2>
@@ -13,27 +13,27 @@
 
   <div class="field">
     <%= form.label :game_name %>
-    <%= form.text_field :game_name, placeholder: 'Game' %>
+    <%= form.text_field :game_name, placeholder: 'Full game name' %>
   </div>
 
   <div class="field">
     <%= form.label :description %>
-    <%= form.text_field :description, placeholder: 'Desc' %>
+    <%= form.text_field :description, placeholder: 'whatever' %>
   </div>
 
   <div class="field">
     <%= form.label :game_type %>
-    <%= form.text_field :game_type, placeholder: 'Desc' %>
+    <%= form.text_field :game_type, placeholder: 'Nintendo? Sony?' %>
   </div>
 
   <div class="field">
     <%= form.label :year_released %>
-    <%= form.text_field :year_released, placeholder: 'Desc' %>
+    <%= form.text_field :year_released, placeholder: 'YYYY' %>
   </div>
 
   <div class="field">
-    <%= form.label :price %>
-    <%= form.text_field :price, placeholder: 'Desc' %>
+    <%= form.label :price_in_ringgit %>
+    <%= form.text_field :price, placeholder: '$ ringgit lah' %>
   </div>
 
     <div class="field">

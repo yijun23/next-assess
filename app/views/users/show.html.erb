@@ -9,9 +9,25 @@
   <strong>Email : </strong>
   <%= @user.email %>
   <br>
-  
-
 </p>
 
 <%= link_to 'Edit', edit_user_path(@user) %> |
 <%= link_to 'Back', users_path %>
+<br>
+<br>
+<H3>Games posted :</H3>
+<% Game.all.each do |game|  %>
+	<% if current_user.id == game.user_id %>
+	<p>
+		<H4><%= game.game_name %></H4>
+		Price<br>
+		<%= game.price %>
+		<br>
+		<%= button_to "View", game_path(game.id), method: :get %>
+	</p>
+
+	
+	<br>
+	<% end %>
+<% end %>
+

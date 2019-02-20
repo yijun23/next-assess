@@ -1,4 +1,4 @@
-<%= form_with(model: user, local: true) do |form| %>
+<%= form_with(model: user, remote: true) do |form| %>
   <% if user.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(user.errors.count, "error") %> prohibited this user from being saved:</h2>
@@ -18,24 +18,24 @@
 
   <div class="field">
     <%= form.label :email %>
-    <%= form.text_field :email, placeholder: 'Email got it? no? go get one' %>
+    <%= form.text_field :email, placeholder: 'Spam emails start today' %>
   </div>
 
   <div class="field">
     <%= form.label :password %>
-    <%= form.password_field :password, placeholder: 'Password goes here' %>
+    <%= form.password_field :password, placeholder: 'Something special' %>
   </div>
 
   <div class="field">
     <%= form.label :password_confirmation %>
-    <%= form.password_field :password_confirmation, placeholder: 'Retype password duh' %>
+    <%= form.password_field :password_confirmation, placeholder: 'Copy paste doesnt work' %>
   </div>
 
   <div class="field">
     <%= form.file_field :avatar %>
   </div>
 
-
+  <br>
   <div class="actions">
     <%= form.submit %>
   </div>

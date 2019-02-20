@@ -1,0 +1,26 @@
+<p id="notice"><%= notice %></p>
+
+
+<%= image_tag @game.image_url(:thumb) if @game.image? %>
+<br>
+  <ul>
+    <li>Game Name :
+        <%= @game.game_name %>
+    </li>
+    <li>Description :
+        <%= @game.description %>
+    </li>
+    <li>Game type :
+        <%= @game.game_type %>
+    </li>
+    <li>Year Released : 
+        <%= @game.year_released %>
+    </li>
+    <br>
+    <li>Price : RM 
+        <%= @game.price %>
+    </li>
+  <ul>
+<br>
+<%= link_to 'Edit', edit_game_path(@game) %> |
+<%= link_to 'Back', games_path %>

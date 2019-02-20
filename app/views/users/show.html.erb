@@ -1,8 +1,16 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Email:</strong>
+<%= image_tag @user.avatar_url(:thumb) if @user.avatar? %>
+<br>
+  <strong>Name : </strong>
+  <%= @user.name %>
+<br>
+  <strong>Email : </strong>
   <%= @user.email %>
+  <br>
+  
+
 </p>
 
 <%= link_to 'Edit', edit_user_path(@user) %> |

@@ -31,7 +31,10 @@ gem 'omniauth-google-oauth2'
 gem 'figaro'
 
 # Use ActiveStorage variant
-# gem 'mini_magick', '~> 4.8'
+gem 'mini_magick'
+
+# For image uploads
+gem 'carrierwave', '~> 1.0'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development

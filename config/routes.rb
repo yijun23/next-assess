@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  resources :games
   root 'welcome#index'  
   resources :users
   resources :sessions, only: [:new, :create, :destroy]

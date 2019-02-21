@@ -79,3 +79,9 @@ gem 'bootstrap-will_paginate', '0.0.10'
 
 # Search function
 gem 'ransack', github: 'activerecord-hackery/ransack'
+
+#RSPEC TESTER
+# Run against the latest stable release
+group :development, :test do
+  gem 'rspec-rails', '~> 3.8'
+end

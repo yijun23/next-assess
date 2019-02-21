@@ -30,7 +30,7 @@ ActiveRecord::Schema.define(version: 2019_02_19_095042) do
     t.string "game_name"
     t.string "description"
     t.string "game_type"
-    t.integer "year_released"
+    t.integer "year_purchased"
     t.integer "price"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

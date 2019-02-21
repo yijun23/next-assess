@@ -3,7 +3,7 @@
 
     <% if current_user %>
       Logged in as <%= current_user.name %>.
-      <%= link_to 'Log Out', logout_path %>
+      <%= link_to 'Log Out', logout_path, method: :destroy %>
       <br>
       <%= link_to 'All Users', users_path %> | 
       <%= link_to 'All Game lists', games_path %>

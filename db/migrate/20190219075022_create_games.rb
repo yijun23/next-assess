@@ -5,7 +5,7 @@ class CreateGames < ActiveRecord::Migration[5.2]
       t.string :game_name
       t.string :description
       t.string :game_type
-      t.integer :year_released
+      t.integer :year_purchased
       t.integer :price
       t.timestamps
     end

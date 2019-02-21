@@ -23,7 +23,7 @@
     <% @games.each do |game| %>
       <tr>
         <td><%= game.game_name %></td>
-        <td><%= game.year_released %></td>
+        <td><%= game.year_purchased %></td>
         <td><%= game.price %></td>
         <td><%= link_to 'Show', game %></td>
         <td><%= link_to 'Edit', edit_game_path(game) %></td>

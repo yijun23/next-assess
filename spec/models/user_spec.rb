@@ -1,23 +1,25 @@
-RSpec.describe User, type: :model do
+require 'rails_helper'
 
+RSpec.describe User, type: :model do
+  context "validation tests" do 
     it 'creates a new user with valid data' do
-        expect(User.create!(name: 'aqsgdgf', email: 'test@example.com', password: 'qwertyu')).to be_valid
+        expect(User.create(name: 'aqsgdgf', email: 'test@example.com', password: 'qwertyu')).to be_valid
     end
 
     it 'creates a new user without name' do
-        expect{ User.create!(email: 'test@example.com', password: 'qwertyu') }.to raise_error('Validation failed: First name can\'t be blank')
+        expect{ User.create!(email: 'test@example.com', password: 'qwertyu') }.to raise_error('Validation failed: Name can\'t be blank')
     end
 
     it 'creates a new user without password' do
-        expect{ User.create!(name: 'qwertayu', email: 'test@example.com') }.to raise_error('Validation failed: Password can\'t be blank, Password is too short (minimum is 7 characters)')
+        expect{ User.create!(name: 'qwertayu', email: 'test@example.com') }.to raise_error('Validation failed: Password can\'t be blank, Password is too short (minimum is 6 characters)')
     end
 
-    it 'should have password length more than 6 characters' do
-        expect{ User.create!(name: 'aqsgdgf', email: 'test@example.com', password: 'qwerty') }.to raise_error('Validation failed: Password is too short (minimum is 7 characters)')
+    it 'should have password length more than 5 characters' do
+        expect{ User.create!(name: 'aqsgdf', email: 'test@example.com', password: 'qwert') }.to raise_error('Validation failed: Password is too short (minimum is 6 characters)')
     end
 
 
-    it 'should have a unique email' do
+     it 'should have a unique email' do
         user1 = User.create!(name: 'aqsgdgf', email: 'test@example.com', password: 'qwertyu')
        expect{ User.create!(name: 'aqsgdgf', email: 'test@example.com', password: 'qwertyu') }.to raise_error('Validation failed: Email has already been taken')
      end
@@ -30,7 +32,8 @@ RSpec.describe User, type: :model do
        expect(User.reflect_on_association(:games).macro).to eq(:has_many)
      end
 
-   it 'should have many authentications' do
+     it 'should have many authentications' do
        expect(User.reflect_on_association(:games).macro).to eq(:has_many)
      end
+  end
 end

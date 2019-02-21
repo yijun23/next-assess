@@ -85,3 +85,9 @@ gem 'ransack', github: 'activerecord-hackery/ransack'
 group :development, :test do
   gem 'rspec-rails', '~> 3.8'
 end
+
+#DEPLOY
+gem 'rails_12factor'
+
+gem 'yt'
+gem 'rails-observers'

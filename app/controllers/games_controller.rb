@@ -11,6 +11,8 @@ class GamesController < ApplicationController
   # GET /games/1
   # GET /games/1.json
   def show
+    currency_changer = 'https://api.exchangeratesapi.io/latest?base=MYR'
+    @currencies = HTTParty.get(currency_changer)['rates']
   end
 
   # GET /games/new

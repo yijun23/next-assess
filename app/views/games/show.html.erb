@@ -13,12 +13,20 @@
     <li>Game type :
         <%= @game.game_type %>
     </li>
-    <li>Year Released : 
+    <li>Year Purchased : 
         <%= @game.year_purchased %>
     </li>
     <br>
-    <li>Price : RM 
-        <%= @game.price %>
+
+    <%# INCLUDES EXCHANGE RATE API, limit 2 decimals %>
+    <li>Price : MYR 
+        <%= sprintf('%.2f',@game.price) %>
+    </li>
+    <li>Price : SGD 
+        <%= sprintf('%.2f',@game.price * @currencies['SGD']) %>
+    </li>
+    <li>Price : USD 
+        <%= sprintf('%.2f', @game.price * @currencies['USD']) %>
     </li>
   <ul>
 <br>

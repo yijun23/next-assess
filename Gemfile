@@ -85,3 +85,6 @@ gem 'ransack', github: 'activerecord-hackery/ransack'
 group :development, :test do
   gem 'rspec-rails', '~> 3.8'
 end
+
+#HTTPARTY for API
+gem 'httparty'

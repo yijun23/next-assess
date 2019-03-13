@@ -15,6 +15,7 @@
 <%= link_to 'Back', users_path %>
 <br>
 <br>
+<% if signed_in? %>
 <H3>Games posted :</H3>
 <% Game.all.each do |game|  %>
 	<% if current_user.id == game.user_id %>
@@ -29,5 +30,6 @@
 	
 	<br>
 	<% end %>
+<% end %>
 <% end %>
 
